@@ -7,9 +7,11 @@ include_once __DIR__ . '\..\vendor\autoload.php';
 $dotenv = new Dotenv();
 $dotenv->load(__DIR__ . '\.env');
 
-$clientId = $_ENV['CLIENT_ID'];
-$clientSecret = $_ENV['CLIENT_SECRET'];
-$redirectUri = $_ENV['CLIENT_REDIRECT_URI'];
+$client_id = $_ENV['CLIENT_ID'];
+$client_secret = $_ENV['CLIENT_SECRET'];
+$redirect_uri = $_ENV['CLIENT_REDIRECT_URI'];
+$auth_code = $_ENV['CLIENT_AUTHORIZATION_CODE'];
+$subdomain = $_ENV['SUBDOMAIN'];
 
 $api_client = new AmoCRMApiClient($clientId, $clientSecret, $redirectUri);
 
