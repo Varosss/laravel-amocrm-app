@@ -1,15 +1,17 @@
 <?php
 
+include __DIR__ . '/bootstrap.php';
+
 $subdomain = 'mytestaccount908975'; //Поддомен нужного аккаунта
 $link = 'https://' . $subdomain . '.amocrm.ru/oauth2/access_token'; //Формируем URL для запроса
 
 /** Соберем данные для запроса */
 $data = [
-    'client_id' => '3b62508f-759f-48de-8373-d06964115fc6',
-    'client_secret' => 'PJg14ZGLJEfZsOg6MzwzQCfwbLfNwYRsoYqu6ja2kSRP1rOnr7hVOjwyPABONl1D',
+    'client_id' => $client_id,
+    'client_secret' => $client_secret,
     'grant_type' => 'authorization_code',
-    'code' => "def50200a9cc6c242df87634e9b641e1a20b372618b9ae4fd07777c68220cdd377c3aeb0d6f881b040490bf6ffa4f8839c52ff42d58c1c6ab9766baa320ea2cb08a1ad69c7e28b256e5e889fe2dea45ad3662f329bf43d00069e6718d7ef43fb7f47a3c0ff8324089f05dd8b916acc0d2ea6cd2d4a85d68390fef0f138a822c51054e015d164afffa6a2c5d64d1470bdf828ad12822eb98b5331f56e037157714c9568d003c10c48d0c235cdddd712524ee94bd6ac59ce1f6b82d832348b3d9681d0f123381c695928f18f0cab5a3f2f3adae2befdb2dd02092d76ea009225d7cfe9c5cc6c7454d1598ca6b7736d7b04fb4aadca61a402765311162ee4eadeb07ef68045ba50d9e9675044486b5dd9947f9a617d12ceb1d91a643ca04c059a3e09b08c61cb1e4f69a40f3d8ab71fb2798f960d61a61662bed747cd7ab643e6a10d746eaaf7800ab9268ac01a62474ab6f3bf4fe9c5309e2023c4691a5ef204f219891e4c3742331fa3fd18f5d5ab92ae6f5e621d6920becd50aa1f42c8e8f6286e993ec04f453b26ed79e1df8de4341f897664c8d0007e4249123f557817ea471b976fa93aa3bd0ca19b1dfd1a8a4d04e002fdc4ec239a6f2a2e3ac506c19a83",
-    'redirect_uri' => 'https://webhook.site/'
+    'code' => $authorization_code,
+    'redirect_uri' => $redirect_uri
 ];
 
 /**
