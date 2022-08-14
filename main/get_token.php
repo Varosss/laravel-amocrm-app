@@ -2,7 +2,6 @@
 
 include __DIR__ . '/bootstrap.php';
 
-$subdomain = 'mytestaccount908975'; //Поддомен нужного аккаунта
 $link = 'https://' . $subdomain . '.amocrm.ru/oauth2/access_token'; //Формируем URL для запроса
 
 /** Соберем данные для запроса */
